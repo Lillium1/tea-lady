@@ -1,67 +1,52 @@
-function mostrarData(){
+function Usuario(nombre, apellido, correo, direccion, telefono, opcion, test5) {
+	this.nombre = nombre;
+	this.apellido = apellido;
+	this.correo = correo;
+	this.direccion = direccion;
+	this.telefono = telefono;
+	this.opcion = opcion;
+	this.test5 = test5;
+}
+
+function mostrarData() {
 	function validar (){
-		function nombre(){
-			// llamar y tomar el dato del campo "nombre"
-			var txtNombre = document.getElementById("nombre").value;
-			// validar que el nombre no este vacio
-			if(txtNombre==""){
-				alert("Error: debe ingresar el campo solicitado");
-			} 
-			// validar que no sean numeros
-			if (/[0-9]/.test(nombre)) {
-				alert("Error: deben ser solo letras");
-			}
-		}
-		nombre();
+		var nombre = document.getElementById("nombre").value;
+		var apellido = document.getElementById("apellido").value;
+		var correo = document.getElementById("correo").value;
+		var direccion = document.getElementById("direccion").value;
+		var telefono = document.getElementById("telefono").value;
+		var opcion = document.getElementById("select").value;
 
-		function apellido(){
-			//llamar y tomar el dato del campo "apellido" 
-			var txtApellido = document.getElementById("apellido").value;
-			//validar que el nombre no este vacio
-			if(txtApellido==""){
-				alert("Error: debe ingresar el campo solicitado");
-			} 
-			// validar que no sean numeros
-			if (/[0-9]/.test(nombre)) {
-				alert("Error: deben ser solo letras");
-			}
+		if (nombre==="" || apellido==="" || correo==="" || direccion==="" || telefono==="") {
+			alert("Debe responder todos los campos")
+		} 
+		for (var i = 0; i < opcion.length; i++) {
+			if (opcion[i].value=="") {
+		 		alert("Debe elegir opcion");
+		 	}	
 		}
-		apellido();
+		if (test5.checked==true) {
+			var arr = []
+			var datos = new Usuario(nombre, apellido, correo, direccion, telefono, opcion, test5);
+			arr.push(datos)
 
-		function direccion(){
-			//llamar y tomar el dato del campo "apellido" 
-			var txtDireccion = document.getElementById("direccion").value;
-			//validar que el nombre no este vacio
-			if(txtDireccion==""){
-				alert("Error: debe ingresar el campo solicitado");
-			} 
-		}
-		direccion();
+			var imprimir = document.getElementById("clientes");
 
-		function correo(){
-			var txtCorreo = document.getElementById("correo").value;
-			// no vacio
-			if(txtCorreo=="" || txtCorreo==undefined || txtCorreo.length==0){
-				alert("Error: debe ingresar el campo solicitado");
-			// que corresponga al esquema de correo
-			} if (txtCorreo!=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/) {
-				alert("Error: debe ingresar un correo valido");
-			}
+			arr.forEach(function(el) {
+				imprimir.innerHTML= "<div><h2>" + "Datos Usuario" + "</h2></div>" +
+				"Nombre: " + el.nombre + "<br>" +
+				"Apellido: " + el.apellido + "<br>" +
+				"Correo: " + el.correo + "<br>" +
+				"Dirección: " + el.direccion + "<br>" +
+				"Teléfono: " + el.telefono + "<br>" +
+				"Pack de Té: " + el.opcion + "<br>" +
+				"Newletter Mensual: " + "Activado"
+			});
 		}
-		correo();
-
-		function listaOpciones(){
-			// tag name llama etiqueta de html ej: h1
-			var seleccion = document.getElementsByTagName("select"); //opcion 1
-			// for recorrer las opciones para comprobar que si value es 0 tirar error
-			for (var i = 0; i < seleccion.length; i++) {
-			 	if (seleccion[i].value=="0") {
-			 		alert("Debe elegir opcion");
-			 	}
-			} 
-		}
-		listaOpciones();
 	}
+	validar();
+}
+
 	// PARALEX
 	$(document).ready(function(){
 	      $('.parallax').parallax();
@@ -70,7 +55,12 @@ function mostrarData(){
 	// OPCIONES
 	$(document).ready(function() {
 	    $('select').material_select();
-	});
+	}); 
 
-}
+
+
+
+
+
+
 
