@@ -4,43 +4,87 @@
 	<meta charset="UTF-8">
 	<title>Té como señora</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="extra/materialize/css/materialize.min.css" media="screen,projection" />
 </head>
 <body>
 	<header>
-		<h1>Tetería Té como Señora</h1>
+		<h3>·Tetería· <br></h3>
+		<h1>Té como Señora</h1>
 	</header>
 	<section id="formulario">
-		<p>Bienvenid@s a la Tetería Té como Señora. Ofrecemos los mejores tés del mercado a bajos precios, gracias a nuestro sistema de venta online y cajas del mes.</p>
+		<p>Bienvenid@s a la Tetería Té como Señora. <br> Ofrecemos los mejores tés del mercado a bajos precios, gracias a nuestro sistema de venta online y cajas del mes.</p>
 		<p>Si deseas suscribirte a nuestra caja de té mensual, rellena tus datos en el formulario</p>
-		<form action="">
-			<label for="Nombre Dueño"> Nombre:</label>
-			<input type="text">
-			<label for="Nombre mascota"> Apellido:</label>
-			<input type="text">
-			<label for="Email"> Correo Electrónico:</label> 
-			<input type="email">
-			<label for="Dirección">Dirección: </label>
-			<input type="text">
-			<label for="Teléfono">Teléfono:</label>
-			<input type="text">
-			<label for="">Selecciona un pack:</label>
-			<select name="" id="">
-				<option value="">Escoje tu opción</option>
-				<option value="">Pack de té clásico (Té negro)</option>
-				<option value="">Pack frutales (Hierbas y té con aromatizado con fruta</option>
-				<option value="">Pack variedades (Té verde, rojo y blanco)</option>
-			</select>
-			<label for=""></label>
-			<input type="checkbox"> Recibe nuestro newsletter mensual con actividades y sorteos
-			<button type="submit" form="form1" value="Submit" onclick="mostrarData()">Enviar</button>
-		</form>
+		<div class="row">
+		    <form class="col s12">
+		      	<div class="row">
+			      	<!--NOMBRE-->
+			        <div class="input-field col s6">	
+			        	<input type="text" id="nombre" class="validate">
+						<label for="Nombre Dueño" data-error="Error"> Nombre:</label>
+					</div>
+					<!--APELLIDO-->
+					<div class="input-field col s6">
+						<input type="text" id="apellido" class="validate">
+						<label for="Nombre mascota" data-error="Error"> Apellido:</label>
+					</div>
+					<!--CORREO-->
+					<div class="input-field col s6">
+						<input type="email" id="correo" class="validate">
+						<label for="Email" data-error="Error"> Correo Electrónico:</label> 
+					
+					</div>
+					<!--DIRECCION-->
+					<div class="input-field col s6">
+						<input type="text" id="apellido" class="validate">
+						<label for="Dirección" data-error="Error">Dirección: </label>
+					</div>
+					<!--TELEFONO-->
+					<div class="input-field col s6">
+						<input type="text" id="apellido" class="validate">
+						<label for="Teléfono" data-error="Error">Teléfono:</label>
+					</div>
+					<!--OPCION-->
+					<div class="input-field col s6">
+					    <select id="select">
+							<option value="" disabled selected>Selecciona un pack:</option>
+							<option value="1">Pack de té clásico (Té negro)</option>
+							<option value="2">Pack frutales (Hierbas y té con aromatizado con fruta</option>
+							<option value="3">Pack variedades (Té verde, rojo y blanco)</option>
+					    </select>
+					</div>
+
+					<!--CHECKBOX-->
+					<form action="#">
+					    <p>
+					      <input type="checkbox" id="test5" class="validate"" />
+					      <label for="test5" data-error="Error">Recibe nuestro newsletter mensual con actividades y sorteos</label>
+					    </p>
+					</form>
+					<!--BOTON-->
+						<button type="submit" class="waves-effect waves-light btn" form="form1" value="Submit" onclick="mostrarData()">Enviar</button>
+
+				</div>
+			</form>
 	</section>
+
 	<section id="clientes">
 		<!-- Acá van los datos de ingresados por los clientes -->
 	</section>
 	<section id="productos">
 		<!-- Acá puedes crear lo que quieras-->
 	</section>
+
+
+	<!--Importando jQuery materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!--Importando JS materialize.js-->
+	<script type="text/javascript" src="extra/materialize/js/materialize.min.js"></script>
+	<!--Importando JS-->
 	<script src="js/main.js"></script>
+
 </body>
+<footer>
+	<p>Hecho por Lillium~</p>
+</footer>
 </html>

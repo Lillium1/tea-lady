@@ -1,1 +1,34 @@
 /* Escribe acá tus estilos*/
+body {
+	background-image: url(../img/fondo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h3, h1 {
+	font-family: elsie;
+	text-align: center;
+	color: white;
+
+}
+
+#formulario {
+	text-align: center;
+	font-family: 'Amaranth', sans-serif;
+    background-color: rgba(255,255,255,0.5);
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+	font-size: 1.2em;
+	margin-top: 50px;
+}
+
+
+
+footer {
+	text-align: center;
+	font-family: Gabriola;
+	font-size: 1.2em;
+    background-color: rgba(255,255,255,0.5);
+
+}
